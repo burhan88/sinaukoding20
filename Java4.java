@@ -14,7 +14,7 @@ public class Java4 {
                 System.out.print("Masukkan Nilai Sisinya : ");
                 double s = in.nextDouble();
                 Persegi p = new Persegi();
-                p.Persegi(s);
+                p.HPersegi(s);
                 while (lg.equals("y")) {
                     System.out.print("Pilih Menu \n 1. Luas \n 2. Keliling \n Masukkan Pilihan Anda : ");
                     int menu = in.nextInt();
@@ -40,7 +40,7 @@ public class Java4 {
                 System.out.print("Masukkan Nilai Lebar : ");
                 double l = in.nextDouble();
                 PersegiPanjang pp = new PersegiPanjang();
-                pp.PersegiPanjang(pa,l);
+                pp.HPersegiPanjang(pa,l);
                 while (lg.equals("y")) {
                     System.out.print("Pilih Menu \n 1. Luas \n 2. Keliling \n Masukkan Pilihan Anda : ");
                     int menu = in.nextInt();
@@ -68,7 +68,7 @@ public class Java4 {
                     System.out.print("Masukkan Nilai Sisi Miring : ");
                     double sm = in.nextDouble();
                     Segitiga se = new Segitiga();
-                    se.Segitiga(sa,st,sm);
+                    se.HSegitiga(sa,st,sm);
                     while (lg.equals("y")) {
                         System.out.print("Pilih Menu \n 1. Luas \n 2. Keliling \n Masukkan Pilihan Anda : ");
                         int menu = in.nextInt();
@@ -92,7 +92,7 @@ public class Java4 {
                     System.out.print("Masukkan Nilai Rusuk : ");
                     double r = in.nextDouble();
                     Lingkaran l = new Lingkaran();
-                    l.Lingkaran(r);
+                    l.HLingkaran(r);
                     while (lg.equals("y")) {
                         System.out.print("Pilih Menu \n 1. Luas \n 2. Keliling \n Masukkan Pilihan Anda : ");
                         int menu = in.nextInt();
@@ -121,78 +121,61 @@ public class Java4 {
 }
 }
 interface BangunDatar{
-    double luas();
-    double keliling();
+
 }
 class Persegi implements BangunDatar{
     double s;
-    public void Persegi(double s){
+    public void HPersegi(double s){
         this.s=s;
     }
     public double luas(){
-        double luas;
-        luas = this.s*this.s;
-        return luas;
+        return s*s;
     }
     public double keliling(){
-        double kel;
-        kel = this.s*4;
-        return kel;
+        return s*4;
     }
 }
 
 class PersegiPanjang implements BangunDatar{
     double pa;
     double l;
-    public void PersegiPanjang(double pa, double l){
+    public void HPersegiPanjang(double pa, double l){
         this.pa=pa;
         this.l=l;
     }
     public double luas(){
-        double luas;
-        luas = this.pa*this.l;
-        return luas;
+        return pa*l;
     }
     public double keliling(){
-        double kel;
-        kel = 2*(this.pa+l);
-        return kel;
+        return 2*(pa+l);
     }
 }
 class Segitiga implements BangunDatar{
     double sa; //Sisi Alas
     double st; //Sisi Tinggi
     double sm; //Sisi Miring
-    public void Segitiga(double sa, double st, double sm){
+    public void HSegitiga(double sa, double st, double sm){
         this.sa=sa;
         this.st=st;
         this.sm=sm;
     }
     public double luas(){
-        double luas;
-        luas = (this.sa*this.st)/2;
-        return luas;
+        return (sa*st)/2;
     }
     public double keliling(){
-        double kel;
-        kel = this.sa+st+sm;
-        return kel;
+        return sa+st+sm;
     }
 }
 
 class Lingkaran implements BangunDatar{
     double r;
-    public void Lingkaran(double r){
+    public void HLingkaran(double r){
         this.r=r;
     }
     public double luas(){
-        double luas;
-        luas = 3.14*this.r*this.r;
-        return luas;
+        return (22*r*r)/7;
     }
     public double keliling(){
-        double kel;
-        kel = (22*2*this.r)/7;
-        return kel;
+        return (22*2*r)/7;
     }
 }
